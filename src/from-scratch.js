@@ -8,15 +8,28 @@ const myForEach = (arr, callback) => {
   };
 };
 
-//printing q1 test to the console below
-const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie'];
-const result = myForEach(myNames, (name) => console.log(`Hi, ${name}!`)); //Hi, Alice!      Hi, Bob!      Hi, Charlie!     Hi, Debbie!
+// //printing q1 test to the console below
+// const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie'];
+// const result = myForEach(myNames, (name) => console.log(`Hi, ${name}!`)); //Hi, Alice!      Hi, Bob!      Hi, Charlie!     Hi, Debbie!
 
-console.log(result); // undefined
-console.log(myNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
+// console.log(result); // undefined
+// console.log(myNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
 
-const myMap = () => {
+//Question 2: this .map version should return a new array made of the return values of the callback on each item. the callback here does need to return something, because each return value gets fed into the new array. do not modify the original array!
+const myMap = (arr, callback) => {
+  let newArr = []; //initializing the new array to hold the return value of the invocation of a given callback function on a given array, this way original function is not mutated
+  for (let el of arr) { //iterating through each element in a given array
+    newArr.push(callback(el)); //invoking the given callback function on each element in a given array and adding that modified element to the new array
+  };
+  return newArr //the final new array, with modified values from a given array after invoking a given callback function on it
 };
+
+// //printing q2 test to the console below
+// const myNums = [1, 4, 9, 16];
+// const myDoubledNums = myMap(myNums, (x) => x * 2); //pass a function to map
+
+// console.log(myDoubledNums); //[2, 8, 18, 32]
+// console.log(myNums); //[1, 4, 9, 16] (orig array is unaffected!)
 
 const myFind = () => {
 };
