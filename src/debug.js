@@ -14,8 +14,14 @@ const myEvery = (arr, callback) => {
   return true; //if all values passed the callback function onvocation test, then returns true
 };
 
+//Question 11: original function- debug so that function properly sorts a list of users by whatever sorting function is passed in. it's a more dynamic version of the code we've already written
+// const sortUsersBy = (users, sortingFunction) => {
+//   return [...users].sort(sortingFunction());
+// };
+
+//debugged
 const sortUsersBy = (users, sortingFunction) => {
-  return [...users].sort(sortingFunction());
+  return [...users].sort(sortingFunction); //corrected by passing the callback function into .sort() method without invoking it
 };
 
 const logEachName = (names) => {
