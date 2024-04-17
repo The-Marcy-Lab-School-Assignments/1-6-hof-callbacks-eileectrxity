@@ -16,7 +16,7 @@
       "FrScTe13": 1,
       "FrScTe14": 1,
       "FrScTe15": 1,
-      "FrScTe16": 0
+      "FrScTe16": 1
     },
     "Debug Tests": {
       "DeTe1": 0,
@@ -70,8 +70,8 @@
     "Debug Tests logEachUserBio - logs each user bio to the console": "DeTe4"
   },
   "humanReadable": {
-    "From Scratch Tests": "15/16",
-    "finalTestScore": "FINAL SCORE: 15/20",
+    "From Scratch Tests": "16/16",
+    "finalTestScore": "FINAL SCORE: 16/20",
     "Debug Tests": "0/4"
   }
 }

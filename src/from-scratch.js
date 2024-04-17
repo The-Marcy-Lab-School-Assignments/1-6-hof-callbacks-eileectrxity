@@ -116,12 +116,12 @@ const sortNumbersBetter = (arr, isDescending) => {
 };
 
 // //printing q7 test to the console below
-const unsortedNums = [1, 100, 14, 3, 2, 11];
-const bigToSmall = sortNumbersBetter(unsortedNums, true);
-console.log(bigToSmall); //[100, 14, 11, 3, 2, 1]
+// const unsortedNums = [1, 100, 14, 3, 2, 11];
+// const bigToSmall = sortNumbersBetter(unsortedNums, true);
+// console.log(bigToSmall); //[100, 14, 11, 3, 2, 1]
 
-const smallToBig = sortNumbersBetter(unsortedNums); //default param
-console.log(smallToBig); //[1, 2, 3, 11, 14, 100]
+// const smallToBig = sortNumbersBetter(unsortedNums); //default param
+// console.log(smallToBig); //[1, 2, 3, 11, 14, 100]
 
 /* Question 8: now instead of sorting primitives, sort an array of objects- data is more complex than simple primitives can convey. sort an array of users that looks like this:
 const users = [ { name: 'Alice', order: 1 }, ... ];
@@ -133,24 +133,48 @@ const sortUsersByOrder = (arr) => {
 };
 
 // //printing q8 test to the console below
-const users = [
-  { name: 'Alice', order: 1 },
-  { name: 'Bob', order: 3 },
-  { name: 'Charlie', order: 2 },
-  { name: 'Debbie', order: 4 },
-];
-
-const sortedUsers = sortUsersByOrder(users);
-console.log(sortedUsers); //logs:
-// [
+// const users = [
 //   { name: 'Alice', order: 1 },
-//   { name: 'Charlie', order: 2 },
 //   { name: 'Bob', order: 3 },
+//   { name: 'Charlie', order: 2 },
 //   { name: 'Debbie', order: 4 },
-// ]
+// ];
 
-const sortUsersByName = () => {
+// const sortedUsers = sortUsersByOrder(users);
+// console.log(sortedUsers); //logs:
+// // [
+// //   { name: 'Alice', order: 1 },
+// //   { name: 'Charlie', order: 2 },
+// //   { name: 'Bob', order: 3 },
+// //   { name: 'Debbie', order: 4 },
+// // ]
+
+
+//Question 9: same as the previous function, but sorting by the name property instead. tricky as the default .sort behavior does do alphabetical orders, but you're comparing objects! can't just use the default behavior, have to use a callback. remember how .sort's callback actually sorts things (negative, 0, positive). do not modify the original array!
+const sortUsersByName = (arr) => {
+  let sortedArr = [...arr];
+  sortedArr.sort((a,b) => {
+    const aName = a.name.toLowerCase(); //lowercasing the string at the name key property to make make comparison between aName and bName case insensitive for consistent sorting results
+    const bName = b.name.toLowerCase();
+    return aName.localeCompare(bName)}); //.sort((a,b) => a.name - b.name) doesn't work because a.name and b.name are both strings, not numbers like a.order or b.order. localeCompare method compares the element strings unicode numbers
+  return sortedArr;
 };
+
+// //printing q9 test to the console below
+// const users = [
+//   { name: 'Alice', order: 22 },
+//   { name: 'Charlie', order: 28 },
+//   { name: 'Diana', order: 40 },
+//   { name: 'Bob', order: 32 },
+// ];
+
+// console.log(sortUsersByName(users)); //logs:
+// [
+//     { name: 'Alice', order: 22 },
+//     { name: 'Bob', order: 32 },
+//     { name: 'Charlie', order: 28 },
+//     { name: 'Diana', order: 40 },
+// ]
 
 module.exports = {
   myForEach,
