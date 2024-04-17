@@ -19,7 +19,7 @@
       "FrScTe16": 1
     },
     "Debug Tests": {
-      "DeTe1": 0,
+      "DeTe1": 1,
       "DeTe2": 0,
       "DeTe3": 0,
       "DeTe4": 0
@@ -71,7 +71,7 @@
   },
   "humanReadable": {
     "From Scratch Tests": "16/16",
-    "finalTestScore": "FINAL SCORE: 16/20",
-    "Debug Tests": "0/4"
+    "finalTestScore": "FINAL SCORE: 17/20",
+    "Debug Tests": "1/4"
   }
 }
