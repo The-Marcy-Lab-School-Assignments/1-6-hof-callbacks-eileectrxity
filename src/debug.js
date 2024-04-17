@@ -24,12 +24,22 @@ const sortUsersBy = (users, sortingFunction) => {
   return [...users].sort(sortingFunction); //corrected by passing the callback function into .sort() method without invoking it
 };
 
+//Question 12: original functions, A + B- looks like the last two functions are using the real forEach function. we already wrote a simpler version of forEach so this should be a small step up! read the forEach docs, make sure you understand the arguments that get passed in by default!
+// const logEachName = (names) => {
+//   return names.forEach(console.log());
+// };
+// const logEachUserBio = (users) => {
+//   return users.forEach(console.log(users.bio));
+// };
+
+//debugged A
 const logEachName = (names) => {
-  return names.forEach(console.log());
+  return names.forEach((el, ind, arr) => console.log(el, ind, arr));
 };
 
+//debugged B
 const logEachUserBio = (users) => {
-  return users.forEach(console.log(users.bio));
+  return users.forEach((el) => console.log(el.bio)); //logging the bio property of each element from a given iterable
 };
 
 module.exports = {
