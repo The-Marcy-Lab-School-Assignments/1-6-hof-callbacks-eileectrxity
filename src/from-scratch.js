@@ -123,8 +123,31 @@ console.log(bigToSmall); //[100, 14, 11, 3, 2, 1]
 const smallToBig = sortNumbersBetter(unsortedNums); //default param
 console.log(smallToBig); //[1, 2, 3, 11, 14, 100]
 
-const sortUsersByOrder = () => {
+/* Question 8: now instead of sorting primitives, sort an array of objects- data is more complex than simple primitives can convey. sort an array of users that looks like this:
+const users = [ { name: 'Alice', order: 1 }, ... ];
+sort them by the order property, always ascending. do not modify the original array! */
+const sortUsersByOrder = (arr) => {
+  let sortedArr = [...arr]; //creating a shallow clone of a given array
+  sortedArr.sort((a,b) => a.order - b.order); //sorting arr by the value of the order key property from the given array of objects
+  return sortedArr; //returning the new copied array, sorted by the order property value
 };
+
+// //printing q8 test to the console below
+const users = [
+  { name: 'Alice', order: 1 },
+  { name: 'Bob', order: 3 },
+  { name: 'Charlie', order: 2 },
+  { name: 'Debbie', order: 4 },
+];
+
+const sortedUsers = sortUsersByOrder(users);
+console.log(sortedUsers); //logs:
+// [
+//   { name: 'Alice', order: 1 },
+//   { name: 'Charlie', order: 2 },
+//   { name: 'Bob', order: 3 },
+//   { name: 'Debbie', order: 4 },
+// ]
 
 const sortUsersByName = () => {
 };
