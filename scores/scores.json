@@ -13,8 +13,8 @@
       "FrScTe10": 1,
       "FrScTe11": 1,
       "FrScTe12": 1,
-      "FrScTe13": 0,
-      "FrScTe14": 0,
+      "FrScTe13": 1,
+      "FrScTe14": 1,
       "FrScTe15": 0,
       "FrScTe16": 0
     },
@@ -70,8 +70,8 @@
     "Debug Tests logEachUserBio - logs each user bio to the console": "DeTe4"
   },
   "humanReadable": {
-    "From Scratch Tests": "12/16",
-    "finalTestScore": "FINAL SCORE: 12/20",
+    "From Scratch Tests": "14/16",
+    "finalTestScore": "FINAL SCORE: 14/20",
     "Debug Tests": "0/4"
   }
 }

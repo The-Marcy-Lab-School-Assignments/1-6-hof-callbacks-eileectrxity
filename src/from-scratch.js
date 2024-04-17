@@ -107,8 +107,21 @@ const sortNumbers = (arr) => {
 // console.log(sortedNums); //[1, 2, 3, 11, 14, 100]
 // console.log(unsortedNums); //[1, 100, 14, 3, 2, 11]
 
-const sortNumbersBetter = () => {
+//Question 7: just like the above function, but now we can pass in a second boolean argument, isDescending. it will determine if we want to sort in ascending or descending order. if the second argument is true, sort descending. if the second argument is false, sort ascending (this is the default behavior). do not modify the original array!
+const sortNumbersBetter = (arr, isDescending) => {
+  let sortedNumsB = [...arr]; //same as previous function, copying/spreading given array elements into a new array
+  if (isDescending === true) { //sort in descending order if given bool for descending is true
+    return sortedNumsB.sort((a,b) => b - a); //sorting in descending order using .sort()
+  } else return sortedNumsB.sort((a,b) => a - b); //if given bool is false or no argument given, sort in ascending order
 };
+
+// //printing q7 test to the console below
+const unsortedNums = [1, 100, 14, 3, 2, 11];
+const bigToSmall = sortNumbersBetter(unsortedNums, true);
+console.log(bigToSmall); //[100, 14, 11, 3, 2, 1]
+
+const smallToBig = sortNumbersBetter(unsortedNums); //default param
+console.log(smallToBig); //[1, 2, 3, 11, 14, 100]
 
 const sortUsersByOrder = () => {
 };
