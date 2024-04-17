@@ -21,7 +21,7 @@ const myMap = (arr, callback) => {
   for (let el of arr) { //iterating through each element in a given array
     newArr.push(callback(el)); //invoking the given callback function on each element in a given array and adding that modified element to the new array
   };
-  return newArr //the final new array, with modified values from a given array after invoking a given callback function on it
+  return newArr; //the final new array, with modified values from a given array after invoking a given callback function on it
 };
 
 // //printing q2 test to the console below
@@ -35,11 +35,11 @@ const myMap = (arr, callback) => {
 const myFind = (arr, callback) => {
   for (let el of arr) { //for..of loop iterating through each element in a given array
      if (callback(el)) { //checking if the value from invoking the callback function on each element is truthy
-      return el //returning the first element of a given array that met the condition of a truthy invocation
+      return el; //returning the first element of a given array that met the condition of a truthy invocation
     };
-  } 
-  return undefined; //needs to be outside of the for loop as last resort. (note: on my first try, had it on line 39 as else return undefined but this was wrong --> in if..else statements, one or the other will always happen; in this case, when condition wasn't met, logic went immediately to the else statement returning undefined and stopping it there)
   };
+  return undefined; //needs to be outside of the for loop as last resort. (note: on my first try, had it on line 39 as else return undefined but this was wrong --> in if..else statements, one or the other will always happen; in this case, when condition wasn't met, logic went immediately to the else statement returning undefined and stopping it there)
+};
 
 // //printing q3 test to the console below
 // const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
@@ -49,8 +49,24 @@ const myFind = (arr, callback) => {
 // const nameHasZ = myFind(myNames, (name) => name.includes('Z'));
 // console.log(nameHasZ); // undefined
 
-const myFilter = () => {
+//Question 4: our .Filter version that returns a new array made up of all the values from the array that passed the callback's conditional. it takes an array and a callback, and returns a new array made up of all the values that passed the callback test. if no matches are found, it returns an empty array. do not modify the original array
+const myFilter = (arr, callback) => {
+  let filtArr = []; //initializing a new array to hold our filtered elements in
+  for (let el of arr) { //for..of loop iterating through each element in a given array
+     if (callback(el)) { //checking if the value from invoking the callback function on each element is truthy
+      console.log(filtArr.push(el)); //if condition is met, push that current truthy element into the new filtered array
+    };
+  };
+  return filtArr; //returning the final filtered array with all elements that passed the callback test; if no elements passed, then array will be empty
 };
+
+// //printing q4 test to the console below
+// const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
+// const namesWithB = myFilter(myNames, (name) => name.includes('B'));
+// console.log(namesWithB); // ['Bob', 'Barry']
+
+// const namesWithZ = myFilter(myNames, (name) => name.includes('Z'));
+// console.log(namesWithZ); // []
 
 const sortWords = () => {
 };
