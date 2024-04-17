@@ -94,8 +94,18 @@ const sortWords = (arr) => {
 // console.log(sortedNames); //['Alice', 'Bob', 'Charlie', 'Debbie']
 // console.log(unsortedNames); //['Charlie', 'Debbie', 'Alice', 'Bob']
 
-const sortNumbers = () => {
+//Question 6: a .sort numbers version that takes in an array of numbers and returns an array with the numbers sorted in ascending order. do not modify the original array!
+const sortNumbers = (arr) => {
+  let sortedNums = [...arr]; //spreading all elements of a given arr into a new array, creating a shallow copy (no nested elements/properties copied) to avoid modifying the original arr
+  return sortedNums.sort((a,b) => a - b); //invoking the .sort() method on the new array copy, passing in the compareFn parameter function. this inline function compares two elements in the given arr. if the return value of subtracting an element, a, from a second element, b, is negative, then a should come before b- first element should be sorted before the second element and vice versa if value is positive
 };
+
+// //printing q6 test to the console below
+// const unsortedNums = [1, 100, 14, 3, 2, 11];
+// const sortedNums = sortNumbers(unsortedNums);
+
+// console.log(sortedNums); //[1, 2, 3, 11, 14, 100]
+// console.log(unsortedNums); //[1, 100, 14, 3, 2, 11]
 
 const sortNumbersBetter = () => {
 };
