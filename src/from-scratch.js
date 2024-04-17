@@ -31,8 +31,23 @@ const myMap = (arr, callback) => {
 // console.log(myDoubledNums); //[2, 8, 18, 32]
 // console.log(myNums); //[1, 4, 9, 16] (orig array is unaffected!)
 
-const myFind = () => {
-};
+//Question 3: this .find version takes an array and a callback. now, this callback is different than the other two that it must return a boolean (or truthy/falsy value). you'll need to iterate through the given array, and call the callback on each value of the array. if the callback returns true, return the value itself from myFind. if the callback never returns true, then myFind returns undefined. do not modify the original array! this is important: the callback returns true or `false``, the HOF itself returns a value or undefined, ok?
+const myFind = (arr, callback) => {
+  for (let el of arr) { //for..of loop iterating through each element in a given array
+     if (callback(el)) { //checking if the value from invoking the callback function on each element is truthy
+      return el //returning the first element of a given array that met the condition of a truthy invocation
+    };
+  } 
+  return undefined; //needs to be outside of the for loop as last resort. (note: on my first try, had it on line 39 as else return undefined but this was wrong --> in if..else statements, one or the other will always happen; in this case, when condition wasn't met, logic went immediately to the else statement returning undefined and stopping it there)
+  };
+
+// //printing q3 test to the console below
+// const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
+
+// const nameHasB = myFind(myNames, (name) => name.includes('B'));
+// console.log(nameHasB); // 'Bob' not 'Barry' because 'Bob' is first
+// const nameHasZ = myFind(myNames, (name) => name.includes('Z'));
+// console.log(nameHasZ); // undefined
 
 const myFilter = () => {
 };
